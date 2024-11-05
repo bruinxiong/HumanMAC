@@ -1,4 +1,4 @@
-# HumanMAC
+# ICCV 2023 HumanMAC
 
 **为响应[开放共享科研记录行动倡议(DCOX)](https://mmcheng.net/docx/)，本工作将提供中文文档，为华人学者科研提供便利。**
 
@@ -14,7 +14,17 @@
 
 ## 更新信息
 
-**[2022/03/26]: HumanMAC代码开源！**
+**[2024/05/06]: 我们发布了最快的实时可控动作生成模型[MotionLCM](https://github.com/Dai-Wenxun/MotionLCM)。**
+
+**[2023/12/19]: HumanMAC在[Interactive Humanoid](https://arxiv.org/pdf/2312.08983.pdf)中作为动作预测模块使用。**
+
+**[2023/10/21]: 欢迎查看最新工作[HumanTOMATO](https://lhchen.top/HumanTOMATO)，首个文本驱动全身动作生成系统。**
+
+**[2023/10/17]: 欢迎查看最新的开源项目[UniMoCap](https://github.com/LinghaoChan/UniMoCap)，统一基于动捕的文本-动作数据集工具。**
+
+**[2023/07/14]: HumanMAC被ICCV 2023录用！**
+
+**[2023/03/26]: HumanMAC代码开源！**
 
 ## 准备
 
@@ -26,7 +36,7 @@
 
 **用于零样本预测实验的[AMASS](https://amass.is.tue.mpg.de/)数据集:**
 
-我们将AMASS数据集骨骼重定向到Human3.6M数据集的骨架上。这里我们只提供AMASS动作的一个子集。重定向后的数据集在[Google Drive](https://drive.google.com/file/d/1ysXf0rpxNqx3FScIf5hkk7JIyM_54aLW/view) ([百度网盘](https://pan.baidu.com/s/1vljNdr7CwBgYlF2QX8S5EA?pwd=qnue))下载。并将.npy文件放在`./data`目录下。
+我们将AMASS数据集骨骼重定向到Human3.6M数据集的骨架上。这里我们只提供AMASS动作的一个子集。重定向后的数据集在[Google Drive](https://drive.google.com/file/d/1ysXf0rpxNqx3FScIf5hkk7JIyM_54aLW/view) ([百度网盘](https://pan.baidu.com/s/1vljNdr7CwBgYlF2QX8S5EA?pwd=qnue))下载。并将.npy文件放在`./data`目录下。重定向过程的细节详见 [`./motion-retargeting`](./motion-retargeting).
 
 最后的`./data`目录结构如下所示：
 
@@ -156,11 +166,12 @@ python main.py --cfg humaneva --mode eval --ckpt ./checkpoints/humaneva_ckpt.pt
 如果您觉得我们的工作对您的研究有帮助，请考虑引用我们的论文：
 
 ```
-@article{chen2023humanmac,
-	title={HumanMAC: Masked Motion Completion for Human Motion Prediction},
-	author={Chen, Ling-Hao and Zhang, Jiawei and Li, Yewen and Pang, Yiren and Xia, Xiaobo and Liu, Tongliang},
-	journal={arXiv preprint arXiv:2302.03665},
-	year={2023}
+@inproceedings{chen2023humanmac,
+  title={Humanmac: Masked motion completion for human motion prediction},
+  author={Chen, Ling-Hao and Zhang, Jiawei and Li, Yewen and Pang, Yiren and Xia, Xiaobo and Liu, Tongliang},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={9544--9555},
+  year={2023}
 }
 ```
 
